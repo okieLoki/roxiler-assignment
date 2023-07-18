@@ -12,6 +12,8 @@ const getCombinedStats = require('./routes/getCombinedStats')
 //db connection
 dbConnect()
 
+
+
 //middleware
 server.use(express.json())
 server.use(cors())

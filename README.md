@@ -1,5 +1,7 @@
 ## API REFERENCE
 
+The service is deployed on Render at https://roxiler-assignment.onrender.com
+
 1. Add Data API:
    - URL: `/api/addData`
    - Method: POST
@@ -16,7 +18,7 @@
    - Method: GET
    - Description: Retrieves products data from the database based on the specified month.
    - Parameters:
-     - `month` (required): The month for which to retrieve the data. The value should be in lowercase, e.g., `january`.
+     - `month` (required): The month for which to retrieve the data. 
    - Response:
      - Status: 200 OK
      - Body: Array of products data
@@ -29,7 +31,7 @@
    - Method: GET
    - Description: Retrieves sales statistics for the specified month.
    - Parameters:
-     - `month` (required): The month for which to retrieve the statistics. The value should be in lowercase, e.g., `january`.
+     - `month` (required): The month for which to retrieve the statistics. 
    - Response:
      - Status: 200 OK
      - Body: Sales statistics for the specified month
@@ -42,7 +44,7 @@
    - Method: GET
    - Description: Retrieves data for generating a bar chart for the specified month.
    - Parameters:
-     - `month` (required): The month for which to retrieve the data. The value should be in lowercase, e.g., `january`.
+     - `month` (required): The month for which to retrieve the data. 
    - Response:
      - Status: 200 OK
      - Body: Data for generating a bar chart for the specified month
@@ -55,7 +57,7 @@
    - Method: GET
    - Description: Retrieves data for generating a pie chart for the specified month.
    - Parameters:
-     - `month` (required): The month for which to retrieve the data. The value should be in lowercase, e.g., `january`.
+     - `month` (required): The month for which to retrieve the data. 
    - Response:
      - Status: 200 OK
      - Body: Data for generating a pie chart for the specified month
@@ -63,4 +65,15 @@
      - Status: 500 Internal Server Error
      - Body: `{ "message": "Error fetching data from API" }`
 
-Note: Replace `{month}` in the URLs with the desired month value, e.g., `january`, `february`, etc. The month value should be in lowercase.
+6. Get Combined data for sales, Bar Graph and Pie Chart
+    - URL: `api/getCombinedStats?month={month}`
+    - Parameters:
+        - `month` (required): The month for which to retrieve the data. 
+    - Response:
+        - Status: 200 OK
+        - Body: Data containing sales, bar graph and pie chart data for the specified month
+    - Error:
+        - Status: 500 Internal Server Error
+        - Body: `{ "message": "Error fetching data from API" }`
+
+Note: Replace `{month}` in the URLs with the desired month value, e.g., `january`, `february`, etc. 
