@@ -6,13 +6,13 @@ const addDataController = async (req, res) => {
     const response = await axios.get('https://s3.amazonaws.com/roxiler.com/product_transaction.json');
     const data = response.data;
 
-    data.forEach(async (product) => {
+    for (const product of data) {
       const existingProduct = await Product.findOne({ id: product.id });
 
       if (!existingProduct) {
         await Product.create(product);
       }
-    })
+    }
 
     return res.status(200).json({
       message: 'Data added successfully',
